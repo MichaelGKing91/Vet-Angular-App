@@ -1,0 +1,13 @@
+
+<h1>Welcome to the Vet</h1>
+<!-- 
+    <app-show-pet [thispet]="testpet"></app-show-pet>
+    <app-show-pet [thispet]="testpet2"></app-show-pet>
+-->
+
+<div *ngFor="let nextpet of allpets">
+    <app-show-pet [thispet]="nextpet"></app-show-pet>
+</div>
+
+<button (click)="addPet()">Add Pet</button>
+<button (click)="removePet()">Remove Pet</button>
