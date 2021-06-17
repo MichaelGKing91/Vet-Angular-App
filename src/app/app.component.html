@@ -6,8 +6,13 @@
 -->
 
 <div *ngFor="let nextpet of allpets">
-    <app-show-pet [thispet]="nextpet"></app-show-pet>
+    <app-show-pet [thispet]="nextpet" (remove)="removeThePet($event)"></app-show-pet>
 </div>
-
-<button (click)="addPet()">Add Pet</button>
+<div>
+    <h2>Add new pet</h2>
+    Name: <input [(ngModel)]="addPetName" type ="text" /><br/>
+    Species: <input [(ngModel)]="addPetSpecies" type ="text" /><br/>
+    Age: <input [(ngModel)]="addPetAge" type ="number" /><br/>
+    <button (click)="addPet()">Add Pet</button>
+</div>
 <button (click)="removePet()">Remove Pet</button>

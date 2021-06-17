@@ -1,4 +1,4 @@
-import { Component,Input,OnInit } from '@angular/core';
+import { Component,EventEmitter,Input,OnInit, Output } from '@angular/core';
 import { Pet } from '../pet';
 
 @Component({
@@ -8,7 +8,17 @@ import { Pet } from '../pet';
 })
 export class ShowPetComponent implements OnInit {
 
+  // Holds each instance of pet
   @Input() thispet: Pet = { name: '', species: '', age: 0 };
+  
+  @Output() remove: EventEmitter<Pet> = new EventEmitter<Pet>();
+
+  deleteMe(){
+    // Call the removeThePet function in the parent component
+    this.remove.emit(this.thispet);
+
+  }
+
   constructor() { }
 
   ngOnInit(): void {
