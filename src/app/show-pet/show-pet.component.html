@@ -3,4 +3,13 @@
     <div>Species: {{ thispet.species }}</div>
     <div>Age: {{ thispet.age }}</div>
     <div><button (click)=deleteMe()>Delete</button></div>
+
+    <div>
+        <br/>
+        Edit Pet:
+        <br/>
+        <input [(ngModel)]="thispet.name" type="text"/><br/>
+        <input [(ngModel)]="thispet.species" type="text"/><br/>
+        <input [(ngModel)]="thispet.age" type="text"/><br/>
+    </div>
 </div>

@@ -70,4 +70,8 @@ export class AppComponent {
     }
   }
 
+  printAllPets(){
+    console.log(this.allpets);
+  }
+
 }
